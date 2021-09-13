@@ -10,7 +10,7 @@ namespace Reductech.EDR.Connectors.TSK.Tests
 public class MetaTests : MetaTestsBase
 {
     /// <inheritdoc />
-    public override Assembly StepAssembly => typeof(ConvertJsonToEntity).Assembly;
+    public override Assembly StepAssembly => typeof(TSKSettings).Assembly;
 
     /// <inheritdoc />
     public override Assembly TestAssembly => typeof(MetaTests).Assembly;
