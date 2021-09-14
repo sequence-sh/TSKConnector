@@ -55,10 +55,14 @@ public partial class IntegrationTests
         var sequence = new TSKAddDataSource()
         {
             CaseDirectory =
-                Constant(@"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05"),
+                Constant(
+                    @"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05\IntegrationTestCase.aut"
+                ),
             DataSourcePath =
-                Constant("C:\\Users\\wainw\\source\\dataExamples\\Pictures\\Mark in the Park.jpg"),
-            IngestProfileName = null
+                Constant(
+                    "C:\\Users\\wainw\\source\\dataExamples\\Pictures\\480689_3513659852772_1643524056_n.jpg"
+                ),
+            IngestProfileName = Constant("")
         };
 
         await TestSCLSequence(sequence);
@@ -71,7 +75,9 @@ public partial class IntegrationTests
         var sequence = new TSKGenerateReports()
         {
             CaseDirectory =
-                Constant(@"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05"),
+                Constant(
+                    @"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05\IntegrationTestCase.aut"
+                ),
             ProfileName = null
         };
 

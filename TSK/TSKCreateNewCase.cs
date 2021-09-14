@@ -69,7 +69,7 @@ public sealed class TSKCreateNewCase : TSKConsoleStep
         };
 
         if (caseType.HasValue)
-            arguments.AddRange(new[] { $"--caseType=\"{caseType.Value}\"", });
+            arguments.AddRange(new[] { $"--caseType=\"{caseType.Value.GetDisplayName()}\"", });
 
         return arguments;
     }
