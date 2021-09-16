@@ -11,12 +11,11 @@ using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Reductech.EDR.Core.TestHarness;
 using Reductech.EDR.Core.Util;
-using static Reductech.EDR.Core.TestHarness.StaticHelpers;
 
 namespace Reductech.EDR.Connectors.TSK.Tests.Steps
 {
 
-public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit>
+public partial class TSKOpenCaseTests : StepTestBase<TSKOpenCase, Unit>
 {
     /// <inheritdoc />
     protected override IEnumerable<StepCase> StepCases
@@ -24,12 +23,10 @@ public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit
         get
         {
             yield return new StepCase(
-                        "Create Case with CaseType",
-                        new TSKCreateNewCase()
+                        "Add Data Source",
+                        new TSKOpenCase()
                         {
-                            CaseName          = Constant("My New Case"),
-                            CaseBaseDirectory = Constant("Case Base Directory"),
-                            CaseType          = Constant(TSKCaseType.single)
+                            CaseDirectory = StaticHelpers.Constant("TestCaseDirectory")
                         },
                         Unit.Default
                     )
@@ -40,13 +37,7 @@ public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit
                                     .RunExternalProcess(
                                         "C:/AutopsyTest",
                                         IgnoreNoneErrorHandler.Instance,
-                                        new[]
-                                        {
-                                            "--nosplash", "--createCase",
-                                            "--caseName=My New Case",
-                                            "--caseBaseDir=Case Base Directory",
-                                            "--caseType=single"
-                                        },
+                                        new[] { "TestCaseDirectory" },
                                         It.IsAny<IReadOnlyDictionary<string, string>>(),
                                         Encoding.UTF8,
                                         It.IsAny<IStateMonad>(),
@@ -62,7 +53,7 @@ public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit
 
     /// <inheritdoc />
     protected override IEnumerable<ErrorCase> ErrorCases =>
-        base.ErrorCases.Select(x => x.WithTestTSKSettings());
+        base.ErrorCases.Select(x => TestHelpers.WithTestTSKSettings<ErrorCase>(x));
 }
 
 }

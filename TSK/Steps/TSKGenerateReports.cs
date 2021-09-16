@@ -8,7 +8,7 @@ using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Reductech.EDR.Core.Util;
 
-namespace Reductech.EDR.Connectors.TSK
+namespace Reductech.EDR.Connectors.TSK.Steps
 {
 
 /// <summary>
@@ -46,9 +46,9 @@ public sealed class TSKGenerateReports : ExistingCaseStep
                         var list = new List<string>() { $"{caseDirectory}", };
 
                         if (profileName.HasValue)
-                            list.Add($"--runIngest=\"{profileName.Value}\"");
+                            list.Add($"--generateReports={profileName.Value}");
                         else
-                            list.Add("--runIngest");
+                            list.Add("--generateReports");
 
                         return list as IReadOnlyList<string>;
                     }

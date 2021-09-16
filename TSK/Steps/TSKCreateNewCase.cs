@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
@@ -10,7 +9,7 @@ using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Reductech.EDR.Core.Util;
 
-namespace Reductech.EDR.Connectors.TSK
+namespace Reductech.EDR.Connectors.TSK.Steps
 {
 
 /// <summary>
@@ -62,14 +61,11 @@ public sealed class TSKCreateNewCase : TSKConsoleStep
 
         var arguments = new List<string>
         {
-            "--nosplash",
-            "--createCase",
-            $"--caseName=\"{caseName}\"",
-            $"--caseBaseDir=\"{caseBaseDir}\"",
+            "--nosplash", "--createCase", $"--caseName={caseName}", $"--caseBaseDir={caseBaseDir}",
         };
 
         if (caseType.HasValue)
-            arguments.AddRange(new[] { $"--caseType=\"{caseType.Value.GetDisplayName()}\"", });
+            arguments.AddRange(new[] { $"--caseType={caseType.Value.GetDisplayName()}", });
 
         return arguments;
     }

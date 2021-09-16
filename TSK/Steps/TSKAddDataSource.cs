@@ -9,7 +9,7 @@ using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Reductech.EDR.Core.Util;
 
-namespace Reductech.EDR.Connectors.TSK
+namespace Reductech.EDR.Connectors.TSK.Steps
 {
 
 /// <summary>
@@ -56,7 +56,7 @@ public sealed class TSKAddDataSource : ExistingCaseStep
                         {
                             $"{caseDirectory}",
                             "--addDataSource",
-                            $"--dataSourcePath=\"{dataSourcePath}\""
+                            $"--dataSourcePath={dataSourcePath}"
                         };
 
                         if (ingestProfileName.HasValue)
@@ -64,7 +64,7 @@ public sealed class TSKAddDataSource : ExistingCaseStep
                             if (string.IsNullOrWhiteSpace(ingestProfileName.Value))
                                 list.Add("--runIngest");
                             else
-                                list.Add($"--runIngest=\"{ingestProfileName.Value}\"");
+                                list.Add($"--runIngest={ingestProfileName.Value}");
                         }
 
                         return list as IReadOnlyList<string>;

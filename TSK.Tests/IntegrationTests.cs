@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
 using Reductech.EDR.ConnectorManagement.Base;
+using Reductech.EDR.Connectors.TSK.Steps;
 using Reductech.EDR.Core.Abstractions;
 using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Serialization;
@@ -18,16 +19,26 @@ namespace Reductech.EDR.Connectors.TSK.Tests
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
 {
-    public const string SkipAll = "";
+    public const string SkipAll = "manual";
+
+    public const string TestCaseName = "IntegrationTestCase";
+
+    public const string TestCaseBaseDirectory = @"C:\Users\wainw\source\stuff";
+
+    public const string TestDataSourcePath =
+        @"C:\Users\wainw\source\dataExamples\loadfile_0001-10001.dat";
+
+    public static readonly string TestCase =
+        @$"{TestCaseBaseDirectory}\{TestCaseName}_2021_09_16_16_56_47\{TestCaseName}.aut";
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
-    public async void TestCreateNewCase()
+    public async void CreateNewCase()
     {
         var sequence = new TSKCreateNewCase()
         {
-            CaseName          = Constant("IntegrationTestCase"),
-            CaseBaseDirectory = Constant(@"C:\Users\wainw\source\stuff"),
+            CaseName          = Constant(TestCaseName),
+            CaseBaseDirectory = Constant(TestCaseBaseDirectory),
             CaseType          = Constant(TSKCaseType.single)
         };
 
@@ -36,32 +47,23 @@ public partial class IntegrationTests
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
-    public async void TestOpenCase()
+    public async void OpenCase()
     {
-        var sequence = new TSKOpenCase()
-        {
-            CaseDirectory = Constant(
-                @"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05\IntegrationTestCase.aut"
-            )
-        };
+        var sequence = new TSKOpenCase() { CaseDirectory = Constant(TestCase) };
 
         await TestSCLSequence(sequence);
     }
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
-    public async void TestAddDataSource()
+    public async void AddDataSource()
     {
         var sequence = new TSKAddDataSource()
         {
             CaseDirectory =
-                Constant(
-                    @"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05\IntegrationTestCase.aut"
-                ),
+                Constant(TestCase),
             DataSourcePath =
-                Constant(
-                    "C:\\Users\\wainw\\source\\dataExamples\\Pictures\\480689_3513659852772_1643524056_n.jpg"
-                ),
+                Constant(TestDataSourcePath),
             IngestProfileName = Constant("")
         };
 
@@ -70,15 +72,26 @@ public partial class IntegrationTests
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
-    public async void TestGenerateReports()
+    public async void GenerateReports()
     {
         var sequence = new TSKGenerateReports()
         {
             CaseDirectory =
-                Constant(
-                    @"C:\Users\wainw\source\stuff\IntegrationTestCase_2021_09_13_15_43_05\IntegrationTestCase.aut"
-                ),
+                Constant(TestCase),
             ProfileName = null
+        };
+
+        await TestSCLSequence(sequence);
+    }
+
+    [Fact(Skip = SkipAll)]
+    [Trait("Category", "Integration")]
+    public async void TestListDataSources()
+    {
+        var sequence = new TSKListDataSources()
+        {
+            CaseDirectory =
+                Constant(TestCase),
         };
 
         await TestSCLSequence(sequence);

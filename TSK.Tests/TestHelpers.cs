@@ -1,5 +1,6 @@
 using System.Reflection;
 using Reductech.EDR.ConnectorManagement.Base;
+using Reductech.EDR.Connectors.TSK.Steps;
 using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.TestHarness;
 
