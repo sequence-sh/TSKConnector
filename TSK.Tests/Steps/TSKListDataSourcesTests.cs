@@ -15,7 +15,7 @@ using Entity = Reductech.EDR.Core.Entity;
 namespace Reductech.EDR.Connectors.TSK.Tests.Steps
 {
 
-public partial class TSKListDataSourcesTests : StepTestBase<TSKListDataSources, Array<Entity>>
+public partial class TSKListDataSourcesTests : StepTestBase<AutopsyListDataSources, Array<Entity>>
 {
     /// <inheritdoc />
     protected override IEnumerable<StepCase> StepCases
@@ -36,7 +36,7 @@ public partial class TSKListDataSourcesTests : StepTestBase<TSKListDataSources, 
 
             yield return new StepCase(
                         "Add Data Source",
-                        new TSKListDataSources()
+                        new AutopsyListDataSources()
                         {
                             CaseDirectory = StaticHelpers.Constant("TestCaseDirectory")
                         },

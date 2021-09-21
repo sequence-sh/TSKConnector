@@ -31,7 +31,7 @@ public static class TestHelpers
         return r;
     }
 
-    public static Assembly TSKAssembly { get; } = typeof(TSKCreateNewCase).Assembly;
+    public static Assembly TSKAssembly { get; } = typeof(AutopsyCreateNewCase).Assembly;
 }
 
 }

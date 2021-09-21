@@ -16,7 +16,7 @@ using static Reductech.EDR.Core.TestHarness.StaticHelpers;
 namespace Reductech.EDR.Connectors.TSK.Tests.Steps
 {
 
-public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit>
+public partial class TSKCreateNewCaseTests : StepTestBase<AutopsyCreateNewCase, Unit>
 {
     /// <inheritdoc />
     protected override IEnumerable<StepCase> StepCases
@@ -25,7 +25,7 @@ public partial class TSKCreateNewCaseTests : StepTestBase<TSKCreateNewCase, Unit
         {
             yield return new StepCase(
                         "Create Case with CaseType",
-                        new TSKCreateNewCase()
+                        new AutopsyCreateNewCase()
                         {
                             CaseName          = Constant("My New Case"),
                             CaseBaseDirectory = Constant("Case Base Directory"),

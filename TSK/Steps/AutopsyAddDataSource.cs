@@ -15,7 +15,7 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 /// <summary>
 /// Add a Data Source
 /// </summary>
-public sealed class TSKAddDataSource : ExistingCaseStep
+public sealed class AutopsyAddDataSource : ExistingCaseStep
 {
     /// <summary>
     /// The Path to the Data Source
@@ -34,7 +34,7 @@ public sealed class TSKAddDataSource : ExistingCaseStep
 
     /// <inheritdoc />
     public override IStepFactory StepFactory { get; } =
-        new SimpleStepFactory<TSKAddDataSource, Unit>();
+        new SimpleStepFactory<AutopsyAddDataSource, Unit>();
 
     /// <inheritdoc />
     public override async Task<Result<IReadOnlyList<string>, IError>> GetArguments(

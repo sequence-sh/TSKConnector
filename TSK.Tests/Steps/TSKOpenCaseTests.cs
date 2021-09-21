@@ -15,7 +15,7 @@ using Reductech.EDR.Core.Util;
 namespace Reductech.EDR.Connectors.TSK.Tests.Steps
 {
 
-public partial class TSKOpenCaseTests : StepTestBase<TSKOpenCase, Unit>
+public partial class TSKOpenCaseTests : StepTestBase<AutopsyOpenCase, Unit>
 {
     /// <inheritdoc />
     protected override IEnumerable<StepCase> StepCases
@@ -24,7 +24,7 @@ public partial class TSKOpenCaseTests : StepTestBase<TSKOpenCase, Unit>
         {
             yield return new StepCase(
                         "Add Data Source",
-                        new TSKOpenCase()
+                        new AutopsyOpenCase()
                         {
                             CaseDirectory = StaticHelpers.Constant("TestCaseDirectory")
                         },

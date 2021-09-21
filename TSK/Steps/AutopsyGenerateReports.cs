@@ -14,11 +14,11 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 /// <summary>
 /// Generate Reports
 /// </summary>
-public sealed class TSKGenerateReports : ExistingCaseStep
+public sealed class AutopsyGenerateReports : ExistingCaseStep
 {
     /// <inheritdoc />
     public override IStepFactory StepFactory { get; } =
-        new SimpleStepFactory<TSKGenerateReports, Unit>();
+        new SimpleStepFactory<AutopsyGenerateReports, Unit>();
 
     /// <summary>
     /// The Report Profile to use to generate the report

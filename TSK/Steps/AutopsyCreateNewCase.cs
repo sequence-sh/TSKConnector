@@ -15,11 +15,11 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 /// <summary>
 /// Creates a new Autopsy Case
 /// </summary>
-public sealed class TSKCreateNewCase : TSKConsoleStep
+public sealed class AutopsyCreateNewCase : TSKConsoleStep
 {
     /// <inheritdoc />
     public override IStepFactory StepFactory { get; } =
-        new SimpleStepFactory<TSKCreateNewCase, Unit>();
+        new SimpleStepFactory<AutopsyCreateNewCase, Unit>();
 
     /// <summary>
     /// The name of the case to create

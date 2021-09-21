@@ -19,7 +19,7 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 /// <summary>
 /// List all Data Sources in a TSK Case
 /// </summary>
-public sealed class TSKListDataSources : CompoundStep<Array<Entity>>
+public sealed class AutopsyListDataSources : CompoundStep<Array<Entity>>
 {
     /// <summary>
     /// The Directory containing the case
@@ -106,7 +106,7 @@ public sealed class TSKListDataSources : CompoundStep<Array<Entity>>
 
     /// <inheritdoc />
     public override IStepFactory StepFactory =>
-        new SimpleStepFactory<TSKListDataSources, Array<Entity>>();
+        new SimpleStepFactory<AutopsyListDataSources, Array<Entity>>();
 }
 
 }

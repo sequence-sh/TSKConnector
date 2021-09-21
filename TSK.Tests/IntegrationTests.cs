@@ -35,7 +35,7 @@ public partial class IntegrationTests
     [Trait("Category", "Integration")]
     public async void CreateNewCase()
     {
-        var sequence = new TSKCreateNewCase()
+        var sequence = new AutopsyCreateNewCase()
         {
             CaseName          = Constant(TestCaseName),
             CaseBaseDirectory = Constant(TestCaseBaseDirectory),
@@ -49,7 +49,7 @@ public partial class IntegrationTests
     [Trait("Category", "Integration")]
     public async void OpenCase()
     {
-        var sequence = new TSKOpenCase() { CaseDirectory = Constant(TestCase) };
+        var sequence = new AutopsyOpenCase() { CaseDirectory = Constant(TestCase) };
 
         await TestSCLSequence(sequence);
     }
@@ -58,7 +58,7 @@ public partial class IntegrationTests
     [Trait("Category", "Integration")]
     public async void AddDataSource()
     {
-        var sequence = new TSKAddDataSource()
+        var sequence = new AutopsyAddDataSource()
         {
             CaseDirectory =
                 Constant(TestCase),
@@ -74,7 +74,7 @@ public partial class IntegrationTests
     [Trait("Category", "Integration")]
     public async void GenerateReports()
     {
-        var sequence = new TSKGenerateReports()
+        var sequence = new AutopsyGenerateReports()
         {
             CaseDirectory =
                 Constant(TestCase),
@@ -88,7 +88,7 @@ public partial class IntegrationTests
     [Trait("Category", "Integration")]
     public async void TestListDataSources()
     {
-        var sequence = new TSKListDataSources()
+        var sequence = new AutopsyListDataSources()
         {
             CaseDirectory =
                 Constant(TestCase),
