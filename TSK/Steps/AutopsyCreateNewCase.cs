@@ -15,7 +15,7 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 /// <summary>
 /// Creates a new Autopsy Case
 /// </summary>
-public sealed class AutopsyCreateNewCase : TSKConsoleStep
+public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
 {
     /// <inheritdoc />
     public override IStepFactory StepFactory { get; } =
@@ -40,7 +40,7 @@ public sealed class AutopsyCreateNewCase : TSKConsoleStep
     /// </summary>
     [StepProperty(3)]
     [DefaultValueExplanation("No Case Type Specified")]
-    public IStep<TSKCaseType>? CaseType { get; set; } = null;
+    public IStep<AutopsyCaseType>? CaseType { get; set; } = null;
 
     /// <inheritdoc />
     public override async Task<Result<IReadOnlyList<string>, IError>> GetArguments(

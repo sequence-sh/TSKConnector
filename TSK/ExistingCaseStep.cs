@@ -9,7 +9,7 @@ namespace Reductech.EDR.Connectors.TSK
 /// <summary>
 /// Base step for steps which open an existing case
 /// </summary>
-public abstract class ExistingCaseStep : TSKConsoleStep
+public abstract class ExistingCaseStep : AutopsyConsoleStep
 {
     /// <summary>
     /// The Directory containing the case

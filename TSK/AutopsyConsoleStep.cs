@@ -15,7 +15,7 @@ namespace Reductech.EDR.Connectors.TSK
 /// <summary>
 /// A step that runs an Autopsy command
 /// </summary>
-public abstract class TSKConsoleStep : CompoundStep<Unit>
+public abstract class AutopsyConsoleStep : CompoundStep<Unit>
 {
     /// <summary>
     /// The Command arguments

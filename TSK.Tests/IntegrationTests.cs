@@ -39,7 +39,7 @@ public partial class IntegrationTests
         {
             CaseName          = Constant(TestCaseName),
             CaseBaseDirectory = Constant(TestCaseBaseDirectory),
-            CaseType          = Constant(TSKCaseType.single)
+            CaseType          = Constant(AutopsyCaseType.single)
         };
 
         await TestSCLSequence(sequence);

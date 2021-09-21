@@ -16,7 +16,8 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 public sealed class AutopsyOpenCase : ExistingCaseStep
 {
     /// <inheritdoc />
-    public override IStepFactory StepFactory { get; } = new SimpleStepFactory<AutopsyOpenCase, Unit>();
+    public override IStepFactory StepFactory { get; } =
+        new SimpleStepFactory<AutopsyOpenCase, Unit>();
 
     /// <inheritdoc />
     public override Task<Result<IReadOnlyList<string>, IError>> GetArguments(

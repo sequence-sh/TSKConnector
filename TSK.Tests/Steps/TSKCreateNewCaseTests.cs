@@ -29,7 +29,7 @@ public partial class TSKCreateNewCaseTests : StepTestBase<AutopsyCreateNewCase, 
                         {
                             CaseName          = Constant("My New Case"),
                             CaseBaseDirectory = Constant("Case Base Directory"),
-                            CaseType          = Constant(TSKCaseType.single)
+                            CaseType          = Constant(AutopsyCaseType.single)
                         },
                         Unit.Default
                     )

@@ -4,7 +4,7 @@
 /// <summary>
 /// The type of the TSK case
 /// </summary>
-public enum TSKCaseType
+public enum AutopsyCaseType
 {
     single,
     multi
