@@ -99,7 +99,7 @@ public sealed class TSKListDataSources : CompoundStep<Array<Entity>>
             .WrapStringStream()
             .Run(stateMonad, cancellationToken)
             .Map(
-                x => new List<string>() { $"{x}", "--listAllDataSources" } as
+                x => new List<string>() { "--nosplash", $"{x}", "--listAllDataSources" } as
                     IReadOnlyList<string>
             );
     }

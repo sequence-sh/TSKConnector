@@ -56,15 +56,16 @@ public sealed class TSKAddDataSource : ExistingCaseStep
                         {
                             $"{caseDirectory}",
                             "--addDataSource",
-                            $"--dataSourcePath={dataSourcePath}"
+                            $"--dataSourcePath",
+                            dataSourcePath
                         };
 
                         if (ingestProfileName.HasValue)
                         {
-                            if (string.IsNullOrWhiteSpace(ingestProfileName.Value))
-                                list.Add("--runIngest");
-                            else
-                                list.Add($"--runIngest={ingestProfileName.Value}");
+                            list.Add("--runIngest");
+
+                            if (!string.IsNullOrWhiteSpace(ingestProfileName.Value))
+                                list.Add(ingestProfileName.Value);
                         }
 
                         return list as IReadOnlyList<string>;

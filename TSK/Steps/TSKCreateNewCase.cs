@@ -61,7 +61,12 @@ public sealed class TSKCreateNewCase : TSKConsoleStep
 
         var arguments = new List<string>
         {
-            "--nosplash", "--createCase", $"--caseName={caseName}", $"--caseBaseDir={caseBaseDir}",
+            "--nosplash",
+            "--createCase",
+            $"--caseName=",
+            caseName,
+            $"--caseBaseDir",
+            caseBaseDir
         };
 
         if (caseType.HasValue)

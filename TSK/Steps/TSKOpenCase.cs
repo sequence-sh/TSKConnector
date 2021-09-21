@@ -26,7 +26,7 @@ public sealed class TSKOpenCase : ExistingCaseStep
         return CaseDirectory
             .WrapStringStream()
             .Run(stateMonad, cancellationToken)
-            .Map(x => new List<string>() { $"{x}" } as IReadOnlyList<string>);
+            .Map(x => new List<string>() { "--caseDir", $"{x}" } as IReadOnlyList<string>);
     }
 }
 

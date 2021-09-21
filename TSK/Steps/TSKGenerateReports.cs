@@ -43,12 +43,10 @@ public sealed class TSKGenerateReports : ExistingCaseStep
                     {
                         var (caseDirectory, profileName) = x;
 
-                        var list = new List<string>() { $"{caseDirectory}", };
+                        var list = new List<string> { $"{caseDirectory}", "--generateReports" };
 
                         if (profileName.HasValue)
-                            list.Add($"--generateReports={profileName.Value}");
-                        else
-                            list.Add("--generateReports");
+                            list.Add(profileName.Value);
 
                         return list as IReadOnlyList<string>;
                     }
