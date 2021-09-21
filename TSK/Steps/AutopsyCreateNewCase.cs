@@ -63,7 +63,7 @@ public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
         {
             "--nosplash",
             "--createCase",
-            $"--caseName=",
+            $"--caseName",
             caseName,
             $"--caseBaseDir",
             caseBaseDir

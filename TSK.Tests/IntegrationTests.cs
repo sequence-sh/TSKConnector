@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Divergic.Logging.Xunit;
@@ -28,8 +31,19 @@ public partial class IntegrationTests
     public const string TestDataSourcePath =
         @"C:\Users\wainw\source\dataExamples\loadfile_0001-10001.dat";
 
-    public static readonly string TestCase =
-        @$"{TestCaseBaseDirectory}\{TestCaseName}_2021_09_16_16_56_47\{TestCaseName}.aut";
+    public static string GetTestCasePath()
+    {
+        var dir = Directory.EnumerateDirectories(
+                TestCaseBaseDirectory,
+                TestCaseName + "*"
+            )
+            .FirstOrDefault();
+
+        if (dir is null)
+            throw new Exception($"Cannot find case {TestCaseName}");
+
+        return dir;
+    }
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
@@ -47,21 +61,12 @@ public partial class IntegrationTests
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
-    public async void OpenCase()
-    {
-        var sequence = new AutopsyOpenCase() { CaseDirectory = Constant(TestCase) };
-
-        await TestSCLSequence(sequence);
-    }
-
-    [Fact(Skip = SkipAll)]
-    [Trait("Category", "Integration")]
     public async void AddDataSource()
     {
         var sequence = new AutopsyAddDataSource()
         {
             CaseDirectory =
-                Constant(TestCase),
+                Constant(GetTestCasePath()),
             DataSourcePath =
                 Constant(TestDataSourcePath),
             IngestProfileName = Constant("")
@@ -77,8 +82,8 @@ public partial class IntegrationTests
         var sequence = new AutopsyGenerateReports()
         {
             CaseDirectory =
-                Constant(TestCase),
-            ProfileName = null
+                Constant(GetTestCasePath()),
+            //ProfileName = Constant("html")
         };
 
         await TestSCLSequence(sequence);
@@ -91,7 +96,7 @@ public partial class IntegrationTests
         var sequence = new AutopsyListDataSources()
         {
             CaseDirectory =
-                Constant(TestCase),
+                Constant(GetTestCasePath()),
         };
 
         await TestSCLSequence(sequence);

@@ -43,7 +43,10 @@ public sealed class AutopsyGenerateReports : ExistingCaseStep
                     {
                         var (caseDirectory, profileName) = x;
 
-                        var list = new List<string> { $"{caseDirectory}", "--generateReports" };
+                        var list = new List<string>
+                        {
+                            "--nosplash", "--caseDir", $"{caseDirectory}", "--generateReports"
+                        };
 
                         if (profileName.HasValue)
                             list.Add(profileName.Value);

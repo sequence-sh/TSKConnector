@@ -54,6 +54,8 @@ public sealed class AutopsyAddDataSource : ExistingCaseStep
 
                         var list = new List<string>()
                         {
+                            "--nosplash",
+                            "--caseDir",
                             $"{caseDirectory}",
                             "--addDataSource",
                             $"--dataSourcePath",

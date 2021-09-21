@@ -15,7 +15,7 @@ using Reductech.EDR.Core.Util;
 namespace Reductech.EDR.Connectors.TSK.Tests.Steps
 {
 
-public partial class TSKGenerateReportsTests : StepTestBase<AutopsyGenerateReports, Unit>
+public partial class AutopsyGenerateReportsTests : StepTestBase<AutopsyGenerateReports, Unit>
 {
     /// <inheritdoc />
     protected override IEnumerable<StepCase> StepCases
@@ -23,7 +23,7 @@ public partial class TSKGenerateReportsTests : StepTestBase<AutopsyGenerateRepor
         get
         {
             yield return new StepCase(
-                        "Add Data Source",
+                        "Generate Reports with  profile",
                         new AutopsyGenerateReports()
                         {
                             CaseDirectory = StaticHelpers.Constant("TestCaseDirectory"),
@@ -40,8 +40,8 @@ public partial class TSKGenerateReportsTests : StepTestBase<AutopsyGenerateRepor
                                         IgnoreNoneErrorHandler.Instance,
                                         new[]
                                         {
-                                            "TestCaseDirectory",
-                                            "--generateReports=TestReportProfile"
+                                            "--nosplash", "--caseDir", "TestCaseDirectory",
+                                            "--generateReports", "TestReportProfile"
                                         },
                                         It.IsAny<IReadOnlyDictionary<string, string>>(),
                                         Encoding.UTF8,
@@ -58,7 +58,7 @@ public partial class TSKGenerateReportsTests : StepTestBase<AutopsyGenerateRepor
 
     /// <inheritdoc />
     protected override IEnumerable<ErrorCase> ErrorCases =>
-        base.ErrorCases.Select(x => TestHelpers.WithTestTSKSettings<ErrorCase>(x));
+        base.ErrorCases.Select(x => x.WithTestTSKSettings<ErrorCase>());
 }
 
 }
