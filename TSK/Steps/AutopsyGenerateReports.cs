@@ -21,7 +21,8 @@ public sealed class AutopsyGenerateReports : ExistingCaseStep
         new SimpleStepFactory<AutopsyGenerateReports, Unit>();
 
     /// <summary>
-    /// The Report Profile to use to generate the report
+    /// The Report Profile to use to generate the report.
+    /// You can create new Report Profiles in the Autopsy User Interface 
     /// </summary>
     [StepProperty(2)]
     [DefaultValueExplanation("Use the Default Profile")]
@@ -45,11 +46,15 @@ public sealed class AutopsyGenerateReports : ExistingCaseStep
 
                         var list = new List<string>
                         {
-                            "--nosplash", "--caseDir", $"{caseDirectory}", "--generateReports"
+                            "--nosplash", "--caseDir", $"{caseDirectory}",
                         };
 
                         if (profileName.HasValue)
-                            list.Add(profileName.Value);
+                            list.Add($"--generateReports={profileName.Value}");
+                        else
+                        {
+                            list.Add("--generateReports");
+                        }
 
                         return list as IReadOnlyList<string>;
                     }

@@ -22,7 +22,7 @@ namespace Reductech.EDR.Connectors.TSK.Tests
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
 {
-    public const string SkipAll = "manual";
+    public const string SkipAll = "";
 
     public const string TestCaseName = "IntegrationTestCase";
 
@@ -83,7 +83,7 @@ public partial class IntegrationTests
         {
             CaseDirectory =
                 Constant(GetTestCasePath()),
-            //ProfileName = Constant("html")
+            ProfileName = Constant("html")
         };
 
         await TestSCLSequence(sequence);
