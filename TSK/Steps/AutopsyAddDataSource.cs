@@ -25,11 +25,12 @@ public sealed class AutopsyAddDataSource : ExistingCaseStep
     public IStep<StringStream> DataSourcePath { get; set; } = null!;
 
     /// <summary>
-    /// The Path to the Data Source.
-    /// If this is empty the default ingest profile will be used instead
+    /// The Path to the Ingest Profile Name.
+    /// If this is not given, the data source will be added but not ingested.
+    /// If this is an empty string then the default ingest profile will be used.
     /// </summary>
     [StepProperty(3)]
-    [DefaultValueExplanation("The name of the ingest profile to use")]
+    [DefaultValueExplanation("The data source will not be ingested")]
     public IStep<StringStream>? IngestProfileName { get; set; }
 
     /// <inheritdoc />

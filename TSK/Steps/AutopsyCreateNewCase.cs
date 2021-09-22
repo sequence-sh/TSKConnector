@@ -50,11 +50,12 @@ public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
     public IStep<StringStream>? DataSourcePath { get; set; } = null!;
 
     /// <summary>
-    /// The Path to the Data Source.
-    /// If the DataSourcePath is not given then this will be ignored.
+    /// The Path to the Ingest Profile Name.
+    /// If this is not given, the data source will be added but not ingested.
+    /// If this is an empty string then the default ingest profile will be used.
     /// </summary>
     [StepProperty(5)]
-    [DefaultValueExplanation("The name of the ingest profile to use")]
+    [DefaultValueExplanation("The data source will not be ingested")]
     public IStep<StringStream>? IngestProfileName { get; set; }
 
     /// <inheritdoc />
@@ -96,10 +97,13 @@ public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
                 new[] { "--addDataSource", $"--dataSourcePath", dataSourcePath.Value }
             );
 
-            arguments.Add("--runIngest");
+            if (ingestProfileName.HasValue)
+            {
+                arguments.Add("--runIngest");
 
-            if (!string.IsNullOrWhiteSpace(ingestProfileName.Value))
-                arguments.Add(ingestProfileName.Value);
+                if (!string.IsNullOrWhiteSpace(ingestProfileName.Value))
+                    arguments.Add(ingestProfileName.Value);
+            }
         }
 
         return arguments;
