@@ -61,6 +61,23 @@ public partial class IntegrationTests
 
     [Fact(Skip = SkipAll)]
     [Trait("Category", "Integration")]
+    public async void CreateNewCaseAndAddData()
+    {
+        var sequence = new AutopsyCreateNewCase()
+        {
+            CaseName          = Constant(TestCaseName),
+            CaseBaseDirectory = Constant(TestCaseBaseDirectory),
+            CaseType          = Constant(AutopsyCaseType.single),
+            DataSourcePath =
+                Constant(TestDataSourcePath),
+            IngestProfileName = Constant("")
+        };
+
+        await TestSCLSequence(sequence);
+    }
+
+    [Fact(Skip = SkipAll)]
+    [Trait("Category", "Integration")]
     public async void AddDataSource()
     {
         var sequence = new AutopsyAddDataSource()
@@ -83,7 +100,7 @@ public partial class IntegrationTests
         {
             CaseDirectory =
                 Constant(GetTestCasePath()),
-            //ProfileName = Constant("html")
+            ProfileName = Constant("html")
         };
 
         await TestSCLSequence(sequence);

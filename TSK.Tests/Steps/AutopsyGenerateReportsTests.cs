@@ -41,7 +41,7 @@ public partial class AutopsyGenerateReportsTests : StepTestBase<AutopsyGenerateR
                                         new[]
                                         {
                                             "--nosplash", "--caseDir", "TestCaseDirectory",
-                                            "--generateReports", "TestReportProfile"
+                                            "--generateReports=TestReportProfile"
                                         },
                                         It.IsAny<IReadOnlyDictionary<string, string>>(),
                                         Encoding.UTF8,

@@ -58,7 +58,7 @@ public sealed class AutopsyAddDataSource : ExistingCaseStep
                             "--caseDir",
                             $"{caseDirectory}",
                             "--addDataSource",
-                            $"--dataSourcePath",
+                            "--dataSourcePath",
                             dataSourcePath
                         };
 
