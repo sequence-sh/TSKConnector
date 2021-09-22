@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
+using Microsoft.Extensions.Logging;
 using Reductech.EDR.Core;
+using Reductech.EDR.Core.Abstractions;
 using Reductech.EDR.Core.ExternalProcesses;
 using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Reductech.EDR.Core.Util;
+using Entity = Reductech.EDR.Core.Entity;
 
 namespace Reductech.EDR.Connectors.TSK
 {
@@ -52,7 +56,7 @@ public abstract class AutopsyConsoleStep : CompoundStep<Unit>
                 )
                 .MapError(x => x.WithLocation(this));
 
-        return result;
+        return result; //TODO check for message "Job processing task finished"
     }
 }
 

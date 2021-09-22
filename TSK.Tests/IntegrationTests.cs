@@ -22,7 +22,7 @@ namespace Reductech.EDR.Connectors.TSK.Tests
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
 {
-    public const string SkipAll = "";
+    public const string SkipAll = "manual";
 
     public const string TestCaseName = "IntegrationTestCase";
 
@@ -54,6 +54,23 @@ public partial class IntegrationTests
             CaseName          = Constant(TestCaseName),
             CaseBaseDirectory = Constant(TestCaseBaseDirectory),
             CaseType          = Constant(AutopsyCaseType.single)
+        };
+
+        await TestSCLSequence(sequence);
+    }
+
+    [Fact(Skip = SkipAll)]
+    [Trait("Category", "Integration")]
+    public async void CreateNewCaseAndAddData()
+    {
+        var sequence = new AutopsyCreateNewCase()
+        {
+            CaseName          = Constant(TestCaseName),
+            CaseBaseDirectory = Constant(TestCaseBaseDirectory),
+            CaseType          = Constant(AutopsyCaseType.single),
+            DataSourcePath =
+                Constant(TestDataSourcePath),
+            IngestProfileName = Constant("")
         };
 
         await TestSCLSequence(sequence);
