@@ -11,7 +11,7 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 {
 
 /// <summary>
-/// List all Data Sources in a TSK Case.
+/// List all Data Sources in an Autopsy Case.
 /// The result is written to the 'Command Output' folder in the case
 /// </summary>
 public sealed class AutopsyListDataSources : ExistingCaseStep

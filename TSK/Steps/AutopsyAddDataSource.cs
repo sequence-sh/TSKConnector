@@ -13,7 +13,7 @@ namespace Reductech.EDR.Connectors.TSK.Steps
 {
 
 /// <summary>
-/// Add a Data Source
+/// Add a Data Source to an Autopsy Case
 /// </summary>
 public sealed class AutopsyAddDataSource : ExistingCaseStep
 {
