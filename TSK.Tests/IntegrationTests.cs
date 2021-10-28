@@ -8,6 +8,7 @@ using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
 using Reductech.EDR.ConnectorManagement.Base;
 using Reductech.EDR.Connectors.TSK.Steps;
+using Reductech.EDR.Core;
 using Reductech.EDR.Core.Abstractions;
 using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Serialization;
@@ -145,7 +146,8 @@ public partial class IntegrationTests
         var runner = new SCLRunner(
             logger,
             sfs,
-            ExternalContext.Default
+            ExternalContext.Default,
+            DefaultRestClientFactory.Instance
         );
 
         var r = await runner.RunSequenceFromTextAsync(
