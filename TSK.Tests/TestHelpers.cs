@@ -1,6 +1,7 @@
 using System.Reflection;
 using Reductech.EDR.ConnectorManagement.Base;
 using Reductech.EDR.Connectors.TSK.Steps;
+using Reductech.EDR.Core.Abstractions;
 using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.TestHarness;
 
@@ -15,17 +16,19 @@ public static class TestHelpers
         where T : ICaseThatExecutes
     {
         var r = stepCase.WithStepFactoryStore(
-            StepFactoryStore.Create(
-                new ConnectorData(
-                    new ConnectorSettings()
-                    {
-                        Enable   = true,
-                        Id       = TSKAssembly.GetName().Name!,
-                        Settings = TestTSKSettings.ToDictionary()
-                    },
-                    TSKAssembly
+            StepFactoryStore.TryCreate(
+                    ExternalContext.Default,
+                    new ConnectorData(
+                        new ConnectorSettings()
+                        {
+                            Enable   = true,
+                            Id       = TSKAssembly.GetName().Name!,
+                            Settings = TestTSKSettings.ToDictionary()
+                        },
+                        TSKAssembly
+                    )
                 )
-            )
+                .Value
         );
 
         return r;

@@ -128,26 +128,27 @@ public partial class IntegrationTests
         var scl = step.Serialize();
         logger.LogInformation(scl);
 
-        var sfs = StepFactoryStore.Create(
-            new ConnectorData(
-                new ConnectorSettings()
-                {
-                    Id     = "Reductech.EDR.Connectors.TSK",
-                    Enable = true,
-                    Settings = new TSKSettings()
+        var sfs = StepFactoryStore.TryCreate(
+                ExternalContext.Default,
+                new ConnectorData(
+                    new ConnectorSettings()
                     {
-                        AutopsyPath = @"C:\Program Files\Autopsy-4.19.1\bin\autopsy64.exe"
-                    }.ToDictionary()
-                },
-                typeof(TSKSettings).Assembly
+                        Id     = "Reductech.EDR.Connectors.TSK",
+                        Enable = true,
+                        Settings = new TSKSettings()
+                        {
+                            AutopsyPath = @"C:\Program Files\Autopsy-4.19.1\bin\autopsy64.exe"
+                        }.ToDictionary()
+                    },
+                    typeof(TSKSettings).Assembly
+                )
             )
-        );
+            .Value;
 
         var runner = new SCLRunner(
             logger,
             sfs,
-            ExternalContext.Default,
-            DefaultRestClientFactory.Instance
+            ExternalContext.Default
         );
 
         var r = await runner.RunSequenceFromTextAsync(
