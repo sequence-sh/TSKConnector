@@ -1,5 +1,4 @@
-﻿namespace Reductech.EDR.Connectors.TSK
-{
+﻿namespace Reductech.EDR.Connectors.TSK;
 
 /// <summary>
 /// The type of the TSK case
@@ -8,6 +7,4 @@ public enum AutopsyCaseType
 {
     single,
     multi
-}
-
 }
