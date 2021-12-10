@@ -1,14 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
-using Reductech.EDR.Core;
-using Reductech.EDR.Core.Internal;
-using Reductech.EDR.Core.Internal.Errors;
-using Reductech.EDR.Core.Util;
+﻿using Reductech.EDR.Core.Internal.Errors;
 
-namespace Reductech.EDR.Connectors.TSK.Steps
-{
+namespace Reductech.EDR.Connectors.TSK.Steps;
 
 /// <summary>
 /// List all Data Sources in an Autopsy Case.
@@ -36,6 +28,4 @@ public sealed class AutopsyListDataSources : ExistingCaseStep
                     IReadOnlyList<string>
             );
     }
-}
-
 }

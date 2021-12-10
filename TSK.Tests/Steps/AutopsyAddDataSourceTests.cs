@@ -1,19 +1,12 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using CSharpFunctionalExtensions;
 using Moq;
 using Reductech.EDR.Connectors.TSK.Steps;
-using Reductech.EDR.Core;
 using Reductech.EDR.Core.ExternalProcesses;
-using Reductech.EDR.Core.Internal;
-using Reductech.EDR.Core.Internal.Errors;
-using Reductech.EDR.Core.TestHarness;
-using Reductech.EDR.Core.Util;
 
-namespace Reductech.EDR.Connectors.TSK.Tests.Steps
-{
+namespace Reductech.EDR.Connectors.TSK.Tests.Steps;
 
 public partial class AutopsyAddDataSourceTests : StepTestBase<AutopsyAddDataSource, Unit>
 {
@@ -62,6 +55,4 @@ public partial class AutopsyAddDataSourceTests : StepTestBase<AutopsyAddDataSour
     /// <inheritdoc />
     protected override IEnumerable<ErrorCase> ErrorCases =>
         base.ErrorCases.Select(x => TestHelpers.WithTestTSKSettings<ErrorCase>(x));
-}
-
 }

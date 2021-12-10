@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -8,17 +6,12 @@ using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
 using Reductech.EDR.ConnectorManagement.Base;
 using Reductech.EDR.Connectors.TSK.Steps;
-using Reductech.EDR.Core;
 using Reductech.EDR.Core.Abstractions;
-using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Serialization;
-using Reductech.EDR.Core.TestHarness;
 using Xunit;
 using Xunit.Abstractions;
-using static Reductech.EDR.Core.TestHarness.StaticHelpers;
 
-namespace Reductech.EDR.Connectors.TSK.Tests
-{
+namespace Reductech.EDR.Connectors.TSK.Tests;
 
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
@@ -137,7 +130,8 @@ public partial class IntegrationTests
                         Enable = true,
                         Settings = new TSKSettings()
                         {
-                            AutopsyPath = @"C:\Program Files\Autopsy-4.19.1\bin\autopsy64.exe"
+                            AutopsyPath =
+                                @"C:\Program Files\Autopsy-4.19.1\bin\autopsy64.exe"
                         }.ToDictionary()
                     },
                     typeof(TSKSettings).Assembly
@@ -159,6 +153,4 @@ public partial class IntegrationTests
 
         r.ShouldBeSuccessful();
     }
-}
-
 }

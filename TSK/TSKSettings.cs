@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Reductech.EDR.Core;
+﻿using System.Runtime.Serialization;
 
-namespace Reductech.EDR.Connectors.TSK
-{
+namespace Reductech.EDR.Connectors.TSK;
 
 /// <summary>
 /// Settings for the TSK Connector
@@ -25,6 +22,4 @@ public sealed class TSKSettings : IEntityConvertible
     {
         return new Dictionary<string, object> { { nameof(AutopsyPath), AutopsyPath }, };
     }
-}
-
 }

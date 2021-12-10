@@ -1,16 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Threading;
-using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
-using Reductech.EDR.Core;
-using Reductech.EDR.Core.Attributes;
-using Reductech.EDR.Core.Internal;
-using Reductech.EDR.Core.Internal.Errors;
-using Reductech.EDR.Core.Util;
+﻿using Reductech.EDR.Core.Internal.Errors;
 
-namespace Reductech.EDR.Connectors.TSK.Steps
-{
+namespace Reductech.EDR.Connectors.TSK.Steps;
 
 /// <summary>
 /// Add a Data Source to an Autopsy Case
@@ -76,6 +66,4 @@ public sealed class AutopsyAddDataSource : ExistingCaseStep
                 )
             ;
     }
-}
-
 }

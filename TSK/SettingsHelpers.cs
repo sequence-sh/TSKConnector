@@ -1,13 +1,9 @@
-﻿using CSharpFunctionalExtensions;
-using Reductech.EDR.ConnectorManagement.Base;
-using Reductech.EDR.Core;
+﻿using Reductech.EDR.ConnectorManagement.Base;
 using Reductech.EDR.Core.Entities;
-using Reductech.EDR.Core.Internal;
 using Reductech.EDR.Core.Internal.Errors;
 using Entity = Reductech.EDR.Core.Entity;
 
-namespace Reductech.EDR.Connectors.TSK
-{
+namespace Reductech.EDR.Connectors.TSK;
 
 /// <summary>
 /// Contains helper methods for TSK settings
@@ -39,6 +35,4 @@ public static class SettingsHelpers
 
         return connectorSettings;
     }
-}
-
 }
