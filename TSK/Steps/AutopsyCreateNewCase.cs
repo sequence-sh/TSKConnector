@@ -30,7 +30,7 @@ public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
     /// </summary>
     [StepProperty(3)]
     [DefaultValueExplanation("No Case Type Specified")]
-    public IStep<AutopsyCaseType>? CaseType { get; set; } = null;
+    public IStep<SCLEnum<AutopsyCaseType>>? CaseType { get; set; } = null;
 
     /// <summary>
     /// The Path to the Data Source to add
@@ -79,7 +79,7 @@ public sealed class AutopsyCreateNewCase : AutopsyConsoleStep
         };
 
         if (caseType.HasValue)
-            arguments.AddRange(new[] { $"--caseType={caseType.Value.GetDisplayName()}", });
+            arguments.AddRange(new[] { $"--caseType={caseType.Value.Value.GetDisplayName()}", });
 
         if (dataSourcePath.HasValue)
         {

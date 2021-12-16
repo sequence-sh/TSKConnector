@@ -27,11 +27,11 @@ public static class SettingsHelpers
         );
 
         if (connectorEntityValue.HasNoValue ||
-            connectorEntityValue.Value is not EntityValue.NestedEntity nestedEntity)
+            connectorEntityValue.Value is not Entity nestedEntity)
             return ErrorCode.MissingStepSettings.ToErrorBuilder(RelativityConnectorKey);
 
         var connectorSettings =
-            EntityConversionHelpers.TryCreateFromEntity<TSKSettings>(nestedEntity.Value);
+            EntityConversionHelpers.TryCreateFromEntity<TSKSettings>(nestedEntity);
 
         return connectorSettings;
     }
