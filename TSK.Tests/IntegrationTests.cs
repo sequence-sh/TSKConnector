@@ -118,7 +118,7 @@ public partial class IntegrationTests
         var logger =
             TestOutputHelper.BuildLogger(new LoggingConfig() { LogLevel = LogLevel.Trace });
 
-        var scl = step.Serialize();
+        var scl = step.Serialize(SerializeOptions.Serialize);
         logger.LogInformation(scl);
 
         var sfs = StepFactoryStore.TryCreate(
