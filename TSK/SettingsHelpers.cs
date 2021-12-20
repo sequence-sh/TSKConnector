@@ -1,5 +1,4 @@
 ﻿using Reductech.Sequence.ConnectorManagement.Base;
-using Reductech.Sequence.Core.Entities;
 using Reductech.Sequence.Core.Internal.Errors;
 using Entity = Reductech.Sequence.Core.Entity;
 
