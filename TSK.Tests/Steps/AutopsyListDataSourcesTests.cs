@@ -1,13 +1,13 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Channels;
 using CSharpFunctionalExtensions;
 using Moq;
-using Reductech.EDR.Connectors.TSK.Steps;
-using Reductech.EDR.Core.ExternalProcesses;
+using Reductech.Sequence.Connectors.TSK.Steps;
+using Reductech.Sequence.Core.ExternalProcesses;
 
-namespace Reductech.EDR.Connectors.TSK.Tests.Steps;
+namespace Reductech.Sequence.Connectors.TSK.Tests.Steps;
 
 public partial class
     AutopsyListDataSourcesTests : StepTestBase<AutopsyListDataSources, Unit>

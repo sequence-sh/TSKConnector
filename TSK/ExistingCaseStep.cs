@@ -1,4 +1,4 @@
-﻿namespace Reductech.EDR.Connectors.TSK;
+﻿namespace Reductech.Sequence.Connectors.TSK;
 
 /// <summary>
 /// Base step for steps which open an existing case

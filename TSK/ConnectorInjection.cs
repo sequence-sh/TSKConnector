@@ -1,7 +1,7 @@
-﻿using Reductech.EDR.Core.Connectors;
-using Reductech.EDR.Core.Internal.Errors;
+﻿using Reductech.Sequence.Core.Connectors;
+using Reductech.Sequence.Core.Internal.Errors;
 
-namespace Reductech.EDR.Connectors.TSK;
+namespace Reductech.Sequence.Connectors.TSK;
 
 /// <summary>
 /// For injecting the connector context

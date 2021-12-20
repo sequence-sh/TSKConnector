@@ -1,6 +1,6 @@
-﻿using Reductech.EDR.Core.Internal.Errors;
+﻿using Reductech.Sequence.Core.Internal.Errors;
 
-namespace Reductech.EDR.Connectors.TSK.Steps;
+namespace Reductech.Sequence.Connectors.TSK.Steps;
 
 /// <summary>
 /// Add a Data Source to an Autopsy Case

@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Reductech.EDR.Core.ExternalProcesses;
-using Reductech.EDR.Core.Internal.Errors;
+using Reductech.Sequence.Core.ExternalProcesses;
+using Reductech.Sequence.Core.Internal.Errors;
 
-namespace Reductech.EDR.Connectors.TSK;
+namespace Reductech.Sequence.Connectors.TSK;
 
 /// <summary>
 /// A step that runs an Autopsy command
