@@ -1,17 +1,17 @@
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
-using Reductech.EDR.ConnectorManagement.Base;
-using Reductech.EDR.Connectors.TSK.Steps;
-using Reductech.EDR.Core.Abstractions;
-using Reductech.EDR.Core.Internal.Serialization;
+using Reductech.Sequence.ConnectorManagement.Base;
+using Reductech.Sequence.Connectors.TSK.Steps;
+using Reductech.Sequence.Core.Abstractions;
+using Reductech.Sequence.Core.Internal.Serialization;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Reductech.EDR.Connectors.TSK.Tests;
+namespace Reductech.Sequence.Connectors.TSK.Tests;
 
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
@@ -126,7 +126,7 @@ public partial class IntegrationTests
                 new ConnectorData(
                     new ConnectorSettings()
                     {
-                        Id     = "Reductech.EDR.Connectors.TSK",
+                        Id     = "Reductech.Sequence.Connectors.TSK",
                         Enable = true,
                         Settings = new TSKSettings()
                         {

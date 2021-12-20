@@ -1,9 +1,8 @@
-﻿using Reductech.EDR.ConnectorManagement.Base;
-using Reductech.EDR.Core.Entities;
-using Reductech.EDR.Core.Internal.Errors;
-using Entity = Reductech.EDR.Core.Entity;
+﻿using Reductech.Sequence.ConnectorManagement.Base;
+using Reductech.Sequence.Core.Internal.Errors;
+using Entity = Reductech.Sequence.Core.Entity;
 
-namespace Reductech.EDR.Connectors.TSK;
+namespace Reductech.Sequence.Connectors.TSK;
 
 /// <summary>
 /// Contains helper methods for TSK settings

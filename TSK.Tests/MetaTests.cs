@@ -1,6 +1,6 @@
-using System.Reflection;
+﻿using System.Reflection;
 
-namespace Reductech.EDR.Connectors.TSK.Tests;
+namespace Reductech.Sequence.Connectors.TSK.Tests;
 
 /// <summary>
 /// Makes sure all steps have a test class

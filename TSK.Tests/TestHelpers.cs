@@ -1,9 +1,9 @@
-using System.Reflection;
-using Reductech.EDR.ConnectorManagement.Base;
-using Reductech.EDR.Connectors.TSK.Steps;
-using Reductech.EDR.Core.Abstractions;
+﻿using System.Reflection;
+using Reductech.Sequence.ConnectorManagement.Base;
+using Reductech.Sequence.Connectors.TSK.Steps;
+using Reductech.Sequence.Core.Abstractions;
 
-namespace Reductech.EDR.Connectors.TSK.Tests;
+namespace Reductech.Sequence.Connectors.TSK.Tests;
 
 public static class TestHelpers
 {
