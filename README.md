@@ -1,6 +1,6 @@
-# Sequence® Connector for The Sleuth Kit
+# Sequence® Connector for The Sleuth Kit®
 
-[Reductech Sequence®](https://gitlab.com/reductech/sequence) is a collection of
+[Sequence®](https://gitlab.com/reductech/sequence) is a collection of
 libraries that automates cross-application e-discovery and forensic workflows.
 
 This connector contains Steps that interact with the [Autopsy Console application](http://sleuthkit.org/autopsy/docs/user-docs/4.19.0/command_line_ingest_page.html).
