@@ -8,7 +8,7 @@
     <AssemblyName>Reductech.Sequence.Connectors.TSK</AssemblyName>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <Nullable>enable</Nullable>
-    <Version>0.13.0$(VersionSuffix)</Version>
+    <Version>0.14.0$(VersionSuffix)</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reductech.Sequence.Core" Version="0.13.0">
+    <PackageReference Include="Reductech.Sequence.Core" Version="0.14.0-a.main.2201261921">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
