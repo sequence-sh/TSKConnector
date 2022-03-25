@@ -30,6 +30,10 @@ Create a new Case and add data to it
 This will create a new case in `c:\Cases`.
 The Case name will be 'TestCase' with the current date and time appended to it.
 
+# Documentation
+
+Documentation available at https://sequence.sh
+
 # Releases
 
 Can be downloaded from the [Releases page](https://gitlab.com/reductech/sequence/connectors/tsk/-/releases).
