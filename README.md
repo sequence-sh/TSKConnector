@@ -1,9 +1,10 @@
 # Sequence® Connector for The Sleuth Kit®
 
-[Sequence®](https://gitlab.com/reductech/sequence) is a collection of
-libraries that automates cross-application e-discovery and forensic workflows.
+[Sequence®](https://sequence.sh) is a collection of libraries for
+automation of cross-application e-discovery and forensic workflows.
 
-This connector contains Steps that interact with the [Autopsy Console application](http://sleuthkit.org/autopsy/docs/user-docs/4.19.0/command_line_ingest_page.html).
+This connector contains Steps that interact with the
+[Autopsy Console application](http://sleuthkit.org/autopsy/docs/user-docs/4.19.0/command_line_ingest_page.html).
 
 ## Steps
 
@@ -30,14 +31,46 @@ Create a new Case and add data to it
 This will create a new case in `c:\Cases`.
 The Case name will be 'TestCase' with the current date and time appended to it.
 
+## Settings
+
+The TSK Connector requires additional configuration which can be
+provided using the `settings` key in `connectors.json`.
+
+### Supported Settings
+
+| Name        | Required |   Type   | Description                            |
+| :---------- | :------: | :------: | :------------------------------------- |
+| AutopsyPath |    ✔     | `string` | The Path the to the Autopsy Executable |
+
+### Example Settings
+
+```json
+"Reductech.Sequence.Connectors.TSK": {
+  "id": "Reductech.Sequence.Connectors.TSK",
+  "enable": true,
+  "version": "0.16.0",
+  "settings": {
+    "AutopsyPath": "C:\\Program Files\\Autopsy-4.19.1\\bin\\autopsy64.exe"
+  }
+}
+```
+
 # Documentation
 
-Documentation available at https://sequence.sh
+https://sequence.sh
 
-# Releases
+# Download
+
+https://sequence.sh/download
+
+# Try SCL and Core
+
+https://sequence.sh/playground
+
+# Package Releases
 
 Can be downloaded from the [Releases page](https://gitlab.com/reductech/sequence/connectors/tsk/-/releases).
 
 # NuGet Packages
 
-Are available in the [Reductech Nuget feed](https://gitlab.com/reductech/nuget/-/packages).
+Release nuget packages are available from [nuget.org](https://www.nuget.org/profiles/Sequence).
