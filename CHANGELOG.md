@@ -1,3 +1,7 @@
+# v0.17.0 (2022-08-29)
+
+Maintenance release - dependency updates only.
+
 # v0.16.0 (2022-07-13)
 
 - Enabled [Source Link](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
@@ -60,3 +64,4 @@ Initial release. Version numbers are aligned with [Core](https://gitlab.com/redu
 ### Documentation
 
 - Update README with Steps and any required settings #5
+
