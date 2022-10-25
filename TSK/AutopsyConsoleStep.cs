@@ -12,12 +12,12 @@ public abstract class AutopsyConsoleStep : CompoundStep<Unit>
     /// <summary>
     /// The Command arguments
     /// </summary>
-    public abstract Task<Result<IReadOnlyList<string>, IError>> GetArguments(
+    public abstract ValueTask<Result<IReadOnlyList<string>, IError>> GetArguments(
         IStateMonad stateMonad,
         CancellationToken cancellationToken);
 
     /// <inheritdoc />
-    protected override async Task<Result<Unit, IError>> Run(
+    protected override async ValueTask<Result<Unit, IError>> Run(
         IStateMonad stateMonad,
         CancellationToken cancellationToken)
     {

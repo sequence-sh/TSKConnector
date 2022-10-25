@@ -20,7 +20,7 @@ public sealed class AutopsyGenerateReports : ExistingCaseStep
     public IStep<StringStream>? ProfileName { get; set; } = null;
 
     /// <inheritdoc />
-    public override Task<Result<IReadOnlyList<string>, IError>> GetArguments(
+    public override ValueTask<Result<IReadOnlyList<string>, IError>> GetArguments(
         IStateMonad stateMonad,
         CancellationToken cancellationToken)
     {
