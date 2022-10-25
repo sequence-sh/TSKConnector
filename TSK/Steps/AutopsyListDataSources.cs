@@ -13,7 +13,7 @@ public sealed class AutopsyListDataSources : ExistingCaseStep
         new SimpleStepFactory<AutopsyListDataSources, Unit>();
 
     /// <inheritdoc />
-    public override Task<Result<IReadOnlyList<string>, IError>> GetArguments(
+    public override ValueTask<Result<IReadOnlyList<string>, IError>> GetArguments(
         IStateMonad stateMonad,
         CancellationToken cancellationToken)
     {

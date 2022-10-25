@@ -28,7 +28,7 @@ public sealed class AutopsyAddDataSource : ExistingCaseStep
         new SimpleStepFactory<AutopsyAddDataSource, Unit>();
 
     /// <inheritdoc />
-    public override async Task<Result<IReadOnlyList<string>, IError>> GetArguments(
+    public override async ValueTask<Result<IReadOnlyList<string>, IError>> GetArguments(
         IStateMonad stateMonad,
         CancellationToken cancellationToken)
     {

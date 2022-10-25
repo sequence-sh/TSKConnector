@@ -18,7 +18,7 @@ public static class SettingsHelpers
     public static Result<TSKSettings, IErrorBuilder> TryGetTSKSettings(this Entity settings)
     {
         var connectorEntityValue = settings.TryGetValue(
-            new EntityPropertyKey(
+            new EntityNestedKey(
                 StateMonad.ConnectorsKey,
                 RelativityConnectorKey,
                 nameof(ConnectorSettings.Settings)
