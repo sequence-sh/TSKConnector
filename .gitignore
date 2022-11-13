@@ -378,3 +378,4 @@ nupkg/
 **/StrykerOutput/
 version.env
 /output
+Cobertura.xml

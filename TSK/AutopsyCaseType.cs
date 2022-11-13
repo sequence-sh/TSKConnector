@@ -1,4 +1,4 @@
-﻿namespace Reductech.Sequence.Connectors.TSK;
+﻿namespace Sequence.Connectors.TSK;
 
 /// <summary>
 /// The type of the TSK case

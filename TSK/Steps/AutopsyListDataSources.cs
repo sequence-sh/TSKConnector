@@ -1,6 +1,6 @@
-﻿using Reductech.Sequence.Core.Internal.Errors;
+﻿using Sequence.Core.Internal.Errors;
 
-namespace Reductech.Sequence.Connectors.TSK.Steps;
+namespace Sequence.Connectors.TSK.Steps;
 
 /// <summary>
 /// List all Data Sources in an Autopsy Case.

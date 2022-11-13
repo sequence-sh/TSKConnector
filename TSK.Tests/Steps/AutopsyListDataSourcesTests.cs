@@ -4,10 +4,10 @@ using System.Threading;
 using System.Threading.Channels;
 using CSharpFunctionalExtensions;
 using Moq;
-using Reductech.Sequence.Connectors.TSK.Steps;
-using Reductech.Sequence.Core.ExternalProcesses;
+using Sequence.Connectors.TSK.Steps;
+using Sequence.Core.ExternalProcesses;
 
-namespace Reductech.Sequence.Connectors.TSK.Tests.Steps;
+namespace Sequence.Connectors.TSK.Tests.Steps;
 
 public partial class
     AutopsyListDataSourcesTests : StepTestBase<AutopsyListDataSources, Unit>

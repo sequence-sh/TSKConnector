@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Reductech.Sequence.Connectors.TSK.Tests;
+namespace Sequence.Connectors.TSK.Tests;
 
 /// <summary>
 /// Makes sure all steps have a test class
