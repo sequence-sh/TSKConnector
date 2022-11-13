@@ -1,4 +1,4 @@
-# Sequence® Connector for The Sleuth Kit®
+# Sequence Connector for The Sleuth Kit®
 
 [Sequence®](https://sequence.sh) is a collection of libraries for
 automation of cross-application e-discovery and forensic workflows.
@@ -45,8 +45,8 @@ provided using the `settings` key in `connectors.json`.
 ### Example Settings
 
 ```json
-"Reductech.Sequence.Connectors.TSK": {
-  "id": "Reductech.Sequence.Connectors.TSK",
+"Sequence.Connectors.TSK": {
+  "id": "Sequence.Connectors.TSK",
   "enable": true,
   "version": "0.16.0",
   "settings": {
@@ -69,7 +69,7 @@ https://sequence.sh/playground
 
 # Package Releases
 
-Can be downloaded from the [Releases page](https://gitlab.com/reductech/sequence/connectors/tsk/-/releases).
+Can be downloaded from the [Releases page](https://gitlab.com/sequence/connectors/tsk/-/releases).
 
 # NuGet Packages
 

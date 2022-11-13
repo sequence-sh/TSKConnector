@@ -20,8 +20,8 @@ Maintenance release - dependency updates only.
 
 EDR is now Sequence. The following has changed:
 
-- The GitLab group has moved to https://gitlab.com/reductech/sequence
-- The root namespace is now `Reductech.Sequence`
+- The GitLab group has moved to https://gitlab.com/sequence
+- The root namespace is now `Sequence`
 - Our documentation site has moved to https://sequence.sh
 
 Everything else is still the same - automation, simplified.
@@ -64,4 +64,3 @@ Initial release. Version numbers are aligned with [Core](https://gitlab.com/redu
 ### Documentation
 
 - Update README with Steps and any required settings #5
-

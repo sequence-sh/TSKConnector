@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Reductech.Sequence.Connectors.TSK;
+namespace Sequence.Connectors.TSK;
 
 /// <summary>
 /// Settings for the TSK Connector

@@ -1,8 +1,8 @@
-﻿using Reductech.Sequence.ConnectorManagement.Base;
-using Reductech.Sequence.Core.Internal.Errors;
-using Entity = Reductech.Sequence.Core.Entity;
+﻿using Sequence.ConnectorManagement.Base;
+using Sequence.Core.Internal.Errors;
+using Entity = Sequence.Core.Entity;
 
-namespace Reductech.Sequence.Connectors.TSK;
+namespace Sequence.Connectors.TSK;
 
 /// <summary>
 /// Contains helper methods for TSK settings

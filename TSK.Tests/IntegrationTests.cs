@@ -4,14 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
-using Reductech.Sequence.ConnectorManagement.Base;
-using Reductech.Sequence.Connectors.TSK.Steps;
-using Reductech.Sequence.Core.Abstractions;
-using Reductech.Sequence.Core.Internal.Serialization;
+using Sequence.ConnectorManagement.Base;
+using Sequence.Connectors.TSK.Steps;
+using Sequence.Core.Abstractions;
+using Sequence.Core.Internal.Serialization;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Reductech.Sequence.Connectors.TSK.Tests;
+namespace Sequence.Connectors.TSK.Tests;
 
 [AutoTheory.UseTestOutputHelper]
 public partial class IntegrationTests
@@ -126,7 +126,7 @@ public partial class IntegrationTests
                 new ConnectorData(
                     new ConnectorSettings()
                     {
-                        Id     = "Reductech.Sequence.Connectors.TSK",
+                        Id     = "Sequence.Connectors.TSK",
                         Enable = true,
                         Settings = new TSKSettings()
                         {
